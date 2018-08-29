@@ -189,14 +189,6 @@ xdebug.remote_log = "/var/log/dnmp/php.xdebug.log"
 ```
 然后重启PHP容器。
 
-## 常见问题
-1. 遇到“No releases available for package "pecl.php.net/redis”
-    > 请参考： https://github.com/yeszao/dnmp/issues/10
-
-说明：**这个问题主要是受国内网络环境影响，现在PHP7以上的版本直接采用从源码安装扩展，所以这个问题已经没有了。**
-
-2. PHP5.6错误“ibfreetype6-dev : Depends: zlib1g-dev but it is not going to be installed or libz-dev”
-    > 请参考： https://github.com/yeszao/dnmp/issues/39
 
 ## License
 MIT
