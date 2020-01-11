@@ -189,6 +189,7 @@ xdebug.remote_log = "/var/log/dnmp/php.xdebug.log"
 ```
 然后重启PHP容器。
 
+本组件库为个人学习 Docker 的过程产物并作为开源项目。
 
 ## License
 MIT
