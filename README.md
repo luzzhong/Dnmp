@@ -1,18 +1,5 @@
 DNMP（Docker + Nginx + MySQL + PHP7/5）是一款全功能的**LNMP一键安装程序**。
 
-DNMP项目特点：
-1. `100%`开源
-2. `100%`遵循Docker标准
-2. 支持**多版本PHP**随意切换（PHP5.4、PHP5.6、PHP7.2)
-3. 支持绑定任意**多个域名**
-4. 支持**HTTPS和HTTP/2**
-5. PHP源代码位于host中
-6. MySQL data位于host中
-7. 所有配置文件可在host中直接修改
-8. 所有日志文件可在host中直接查看
-9. 内置**完整PHP扩展安装**命令
-10. 实际项目中应用，确保`100%`可用
-11. 一次配置，**Windows、Linux、MacOs**皆可用
 
 ## 1.项目结构
 目录说明：
@@ -24,8 +11,6 @@ DNMP项目特点：
 │   ├── mysql.cnf           MySQL用户配置文件
 │   ├── php-fpm.conf        PHP-FPM配置文件（部分会覆盖php.ini配置）
 │   └── php.ini             PHP默认配置文件
-├── docker-compose54.yml    PHP5.4 docker-compose项目文件
-├── docker-compose56.yml    PHP5.6 docker-compose项目文件
 ├── docker-compose.yml      PHP最新版docker-compose项目文件
 ├── log                     Nginx日志目录
 ├── mysql                   MySQL数据目录
@@ -64,26 +49,13 @@ DNMP项目特点：
 ```
 $ docker-compose up
 ```
-在`docker-compose stop`后，我们可以用下面的命令启动**PHP5.4**或**PHP5.6**:
-```
-$ docker-compose -f docker-compose54.yml up
-$ docker-compose -f docker-compose56.yml up
-```
 如果该版本是第一次启动，那么还需要加上`--build`参数构建，不然还是会启动最新版本：
-```
-$ docker-compose -f docker-compose54.yml up --build
-$ docker-compose -f docker-compose56.yml up --build
-```
+
 在版本切换时，我们不需要修改任何配置文件，包括Nginx配置文件和php.ini等，
 除非是代码兼容错误，否则切换版本后应该都能正常工作。
 
 > 注意：因为所有PHP版本使用的是同一个端口配置，所以我们同时只能使用一个版本，要切换到另外一个版本，必须先停止原来的版本。
 
-
-## 4. HTTPS和HTTP/2
-本项目的演示站点有两个：
-* http://www.site1.com (同 http://localhost)
-* https://www.site2.com
 
 要预览这两个站点，请在主机的`hosts`文件中加上如下两行：
 ```
